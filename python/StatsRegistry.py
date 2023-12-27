@@ -1,5 +1,7 @@
+from helper import singleton
 
-class StatsRegistry:
+class StatsRegistry(metaclass=singleton):
+
     def __init__(self):
         self.__registry = {}
 
@@ -11,9 +13,6 @@ class StatsRegistry:
 
     def remove(self, id):
         del self.__registry[id]
-
-    def replace(self, stats):
-        self.__registry[stats.get_id()] = stats
 
     def contains(self, id):
         return id in self.__registry
