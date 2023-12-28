@@ -1,4 +1,4 @@
-from helper import singleton
+from common.helper import singleton
 
 class StatsRegistry(metaclass=singleton):
 
