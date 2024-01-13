@@ -17,3 +17,9 @@ class singleton:
             instance = super().__call__(*args, **kwargs)
             cls.__instances[cls] = instance
         return cls.__instances[cls]
+
+# state enum
+class ControllerState:
+    IDLE = 0
+    BUSY = 1
+    ERROR = 2

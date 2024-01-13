@@ -1,4 +1,6 @@
 from common.helper import singleton
+# TODO: add config file
+MAX_ENTRIES = 100
 
 class StatsRegistry(metaclass=singleton):
 
@@ -6,6 +8,8 @@ class StatsRegistry(metaclass=singleton):
         self.__registry = {}
 
     def put(self, stats):
+        if len(self.__registry) >= MAX_ENTRIES:
+            raise Exception("Stats registry is full")
         self.__registry[stats.get_id()] = stats
 
     def get(self, id):

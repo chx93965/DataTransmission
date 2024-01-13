@@ -11,7 +11,7 @@ class StatsHandler(metaclass=singleton):
         self.__stats_registry = StatsRegistry()
 
     @synchronized
-    def get_stats(self):
+    def find_stats(self):
         stats_list = []
         for stats in self.__stats_registry.get_registry().values():
             stats_list.append(stats)
@@ -19,7 +19,7 @@ class StatsHandler(metaclass=singleton):
         return stats_list
 
     @synchronized
-    def get_stats_by_id(self, id):
+    def find_stats_by_id(self, id):
         stats = self.__stats_registry.get(id)
         if stats is None:
             raise Exception("Stats #" + id + " does not exist")
@@ -27,7 +27,7 @@ class StatsHandler(metaclass=singleton):
         return stats
 
     @synchronized
-    def put_stats(self, stats_list):
+    def push_stats(self, stats_list):
         failures = []
         for stats in stats_list:
             id = stats.get_id()
@@ -46,15 +46,16 @@ class StatsHandler(metaclass=singleton):
         return failures
 
     @synchronized
-    def delete_stats(self, id):
+    def pop_stats(self, id):
         stats = self.__stats_registry.get(id)
         if stats is None:
             logger.debug("Stats #" + id + " does not exist")
             raise Exception("Stats #" + id + " does not exist")
         self.__stats_registry.remove(id)
         logger.debug("Deleted: Stats #" + id)
+        return stats
 
     @synchronized
-    def clear_stats(self):
+    def empty_stats(self):
         self.__stats_registry.clear()
-        logger.debug("All stats cleared")
+        logger.debug("All stats removed")
