@@ -1,5 +1,5 @@
-#ifndef DBMANAGER_H
-#define DBMANAGER_H
+#ifndef ROCKSDBINTERFACE_H
+#define ROCKSDBINTERFACE_H
 
 #include <string>
 #include "rocksdb/db.h"
@@ -34,4 +34,4 @@ extern "C" {
 }
 #endif
 
-#endif // DBMANAGER_H
+#endif // ROCKSDBINTERFACE_H

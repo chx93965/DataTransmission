@@ -9,7 +9,7 @@ def synchronized(func):
 
     return synced_func
 
-class singleton:
+class singleton(type):
     __instances = {}
 
     def __call__(cls, *args, **kwargs):

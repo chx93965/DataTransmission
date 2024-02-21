@@ -1,0 +1,1 @@
+g++ -fPIC -shared -o rocksDBInterface.so -std=c++17 rocksDBInterface.cpp -lrocksdb -lsnappy -lpthread -lbz2 -lz -lrt

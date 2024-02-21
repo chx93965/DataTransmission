@@ -1,5 +1,4 @@
 from DBManager import *
-import DBManager
 import logging
 import socket
 import json
@@ -62,7 +61,7 @@ class StatsReceiver(metaclass=singleton):
 
 
 if __name__ == '__main__':
-    print("Hello World!")
+    print("Listening on port {}...".format(port))
     stats_receiver = StatsReceiver()
 
 
