@@ -1,4 +1,4 @@
-from user_end.common.helper import singleton
+from common.helper import singleton
 from ctypes import cdll
 from ctypes import c_char_p
 import logging

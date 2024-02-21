@@ -1,5 +1,4 @@
-from user_end.common.helper import singleton
-from user_end.client.DBManager import *
+from DBManager import *
 import DBManager
 import logging
 import socket
