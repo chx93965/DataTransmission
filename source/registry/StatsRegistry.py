@@ -1,4 +1,4 @@
-from common.helper import singleton
+from source.common.helper import singleton
 # TODO: add config file
 MAX_ENTRIES = 100
 

@@ -1,6 +1,6 @@
 import logging
-from common.helper import synchronized, singleton
-from registry.StatsRegistry import StatsRegistry
+from source.common.helper import synchronized, singleton
+from source.registry.StatsRegistry import StatsRegistry
 
 logger = logging.getLogger("StatsHandler")
 logger.setLevel(logging.DEBUG)

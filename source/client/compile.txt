@@ -1,0 +1,1 @@
+g++ -fPIC -shared -o DBManager.so -std=c++17 DBManager.cpp -lrocksdb -lsnappy -lpthread -lbz2 -lz -lrt
