@@ -6,8 +6,8 @@ import logging
 logger = logging.getLogger("DBManager")
 logger.setLevel(logging.DEBUG)
 
-lib = cdll.LoadLibrary('./DBManager.so')
-DBDir = "../statsDB"
+lib = cdll.LoadLibrary('./rocksDBInterface.so')
+DBDir = "./statsDB"
 lib.DBManager_readValue.restype = c_char_p
 
 class DBManager(metaclass=singleton):

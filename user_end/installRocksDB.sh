@@ -1,6 +1,6 @@
 #!/bin/bash
 
-ROCKSDB_VERSION=7.4.4
+ROCKSDB_VERSION=6.15.4
 
 #Run as a root user
 if [ "$EUID" -ne 0 ]
